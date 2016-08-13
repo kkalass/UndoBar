@@ -445,6 +445,7 @@ public class UndoBarController extends LinearLayout {
 
     @Override
     protected Parcelable onSaveInstanceState() {
+        super.onSaveInstanceState();
         final Bundle outState = new Bundle();
         final int count = mMessages.size();
         final Message[] messages = new Message[count];
