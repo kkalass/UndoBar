@@ -103,6 +103,7 @@ public class UndoBarController extends LinearLayout {
         mMessages.add(message);
     }
 
+    @SuppressLint("ResourceType")
     public UndoBarController(final Context context, final AttributeSet attrs) {
         super(context, attrs);
         TypedArray ta = context.getTheme().obtainStyledAttributes(new int[]{R.attr.undoBarStyle});
@@ -112,6 +113,7 @@ public class UndoBarController extends LinearLayout {
 
         ta = context.getTheme().obtainStyledAttributes(new int[]{R.attr.ub_inAnimation, R.attr.ub_outAnimation});
         inAnimation = AnimationUtils.loadAnimation(context, ta.getResourceId(0, R.anim.undobar_classic_in_anim));
+
         outAnimation = AnimationUtils.loadAnimation(context, ta.getResourceId(1, R.anim.undobar_classic_out_anim));
 
         LayoutInflater.from(context).inflate(R.layout.undobar, this, true);
@@ -303,7 +305,10 @@ public class UndoBarController extends LinearLayout {
     }
 
     private static boolean isTablet(Context context) {
-        return context.getResources().getConfiguration().smallestScreenWidthDp >= 600;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
+            return context.getResources().getConfiguration().smallestScreenWidthDp >= 600;
+        }
+        return false;
     }
 
     /**
