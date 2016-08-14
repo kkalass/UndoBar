@@ -6,19 +6,31 @@
     style="?ub_containerStyle">
 
     <TextView
+        android:layout_weight="1.0"
+        android:layout_gravity="start|center"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"
+        android:freezesText="true"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="#fff"
         android:id="@+id/undobar_message"
         style="?ub_messageStyle" />
 
     <View
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_width="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@null"
         android:id="@+id/undobar_divider"
         style="?ub_dividerStyle"/>
 
     <Button
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_width="wrap_content"
         android:id="@+id/undobar_button"
         style="?ub_buttonStyle" />
