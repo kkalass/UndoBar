@@ -2,5 +2,9 @@ apply from: '../gradle/legacy-android-library.gradle'
 apply from: '../gradle/maven_push.gradle'
 
 dependencies {
-    compile 'com.android.support:support-annotations:22.1.1'
+    compile 'com.android.support:support-annotations:27.0.2'
+}
+
+android {
+    buildToolsVersion '27.0.3'
 }
